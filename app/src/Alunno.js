@@ -20,19 +20,23 @@ export default function Alunno({alunno, popolaAlunni}) {
     }
 
     return (
-        <div>
-            {alunno.nome} {alunno.cognome}
-            { richiestaConferma ?
-                <span>Sei sicuro?
-                    <button onClick={cancellaAlunno}>si</button>
-                    <button onClick={annulla}>no</button>
-                </span>
-            :
-                <button onClick={richiesta}>Cancella</button>
-            }
-            { inCancellazione &&
-                <span>in fase di cancellazione...</span>
-            }
-        </div>
+        <tr>
+            <td>{alunno.nome}</td>
+            <td>{alunno.cognome}</td> 
+            <td>
+                { richiestaConferma ?
+                    <span>Sei sicuro?
+                        <button onClick={cancellaAlunno}>si</button>
+                        <button onClick={annulla}>no</button>
+                    </span>
+                :
+                    <button onClick={richiesta}>Cancella</button>
+                }
+                { inCancellazione &&
+                    <span>in fase di cancellazione...</span>
+                }
+            </td>
+
+        </tr>
     )
 }

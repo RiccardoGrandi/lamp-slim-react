@@ -10,4 +10,8 @@ $app->get('/alunni', "AlunniController:index");
 
 $app->delete('/alunni/{id}', "AlunniController:delete");
 
+$app->post('/alunni', "AlunniController:post");
+
+$app->put('/alunni/{id}', "AlunniController:update");
+
 $app->run();
