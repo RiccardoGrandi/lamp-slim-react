@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function Alunno({ alunno, popolaAlunni }) {
+export default function Alunno({ alunno, popolaAlunni, setAlunno, setInsertForm }) {
   const [inCancellazione, setInCancellazione] = useState(false);
   const [richiestaConferma, setRichiestaConferma] = useState(false);
   const [editing, setEditing] = useState(false);
@@ -52,6 +52,11 @@ export default function Alunno({ alunno, popolaAlunni }) {
     setCognome(event.target.value);
   }
 
+  function avviaEditing2() {
+    setAlunno(alunno);
+    setInsertForm(true);
+  }
+
   return (
     <tr>
       <td>
@@ -77,6 +82,7 @@ export default function Alunno({ alunno, popolaAlunni }) {
         ) : (
           <>
             <button onClick={avviaEditing}>Edit</button>
+            <button onClick={avviaEditing2}>Edit2</button>
             {richiestaConferma ? (
               <span>
                 {" "}
