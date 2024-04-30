@@ -1,4 +1,5 @@
 <?php
+
 use Slim\Factory\AppFactory;
 
 require __DIR__ . '/vendor/autoload.php';
@@ -12,6 +13,6 @@ $app->delete('/alunni/{id}', "AlunniController:delete");
 
 $app->post('/alunni', "AlunniController:post");
 
-$app->put('/alunni/{id}', "AlunniController:update");
+$app->put('/alunni/{id}', "AlunniController:put");
 
 $app->run();
